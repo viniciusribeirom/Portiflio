@@ -6,27 +6,6 @@ Portfólio profissional moderno, responsivo e com design premium desenvolvido em
 
 ---
 
-## 🚀 Deploy
-
-O projeto está pronto para deploy nas seguintes plataformas:
-
-### **Vercel**
-1. Faça fork deste repositório
-2. Acesse [vercel.com](https://vercel.com)
-3. Importe o repositório
-4. Deploy automático a cada push
-
-### **Netlify**
-1. Arraste a pasta `portfolio/` para [netlify.com](https://netlify.com)
-2. Ou conecte via Git
-
-### **GitHub Pages**
-1. Vá em Settings > Pages
-2. Selecione a branch principal
-3. Escolha a pasta raiz
-4. Seu site estará em `https://seuusuario.github.io/portfolio/`
-
----
 
 ## 📁 Estrutura de Pastas
 
