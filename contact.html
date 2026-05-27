@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <!-- ============================================
+         PORTFÓLIO VINICIUS RIBEIRO - CONTACT.HTML
+         ============================================
+         Página de contato com formulário funcional,
+         links sociais e informações profissionais.
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Contato | Vinicius Ribeiro - Computer Science Student</title>
+    <meta name="description" content="Entre em contato com Vinicius Ribeiro. Email: viniciusgg502@gmail.com. Desenvolvedor Web, Java, QA e Cybersecurity.">
+    <meta name="keywords" content="Contato, Vinicius Ribeiro, Email, LinkedIn, GitHub, Desenvolvedor">
+    <meta name="author" content="Vinicius Ribeiro de Mattos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viniciusribeiro.dev/contact.html">
+    <meta property="og:title" content="Contato | Vinicius Ribeiro">
+    <meta property="og:description" content="Entre em contato com Vinicius Ribeiro para oportunidades e colaborações.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Estabelecendo conexão</div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span>&lt;VR/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="contact.html" class="active">Contato</a></li>
+            </ul>
+
+            <div class="flex items-center gap-sm">
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre</a>
+        <a href="projects.html">Projetos</a>
+        <a href="contact.html">Contato</a>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Contato
+         ============================================ -->
+    <section class="hero" style="min-height: 50vh; padding-top: 120px;">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1" style="width: 300px; height: 300px; top: -50px; right: -50px;"></div>
+            <div class="gradient-orb orb-2" style="width: 250px; height: 250px; bottom: -30px; left: -30px;"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header animate fade-up" style="text-align: center;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);">Vamos <span class="text-gradient">Conversar</span></h2>
+                <p style="max-width: 700px; margin: 0 auto;">
+                    Tem uma oportunidade, projeto ou apenas quer trocar ideias? 
+                    Estou disponível para novas conexões!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO CONTATO - Formulário + Info
+         ============================================ -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Informações de contato -->
+                <div class="contact-info animate fade-right">
+                    <h3>Informações de Contato</h3>
+                    <p style="margin-bottom: var(--space-md);">
+                        Sinta-se à vontade para entrar em contato através de qualquer 
+                        um dos canais abaixo. Respondo o mais rápido possível!
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:viniciusgg502@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">Email</div>
+                                <div style="font-size: 0.9rem;">viniciusgg502@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">LinkedIn</div>
+                                <div style="font-size: 0.9rem;">/in/viniciusribeiro</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">GitHub</div>
+                                <div style="font-size: 0.9rem;">@viniciusribeirom</div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="contact-link" onclick="copyToClipboard('viniciusgg502@gmail.com'); return false;">
+                            <i class="fas fa-copy"></i>
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">Copiar Email</div>
+                                <div style="font-size: 0.9rem;">Clique para copiar</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Redes sociais extras -->
+                    <div style="margin-top: var(--space-lg);">
+                        <h4 style="margin-bottom: var(--space-sm);">Outras Redes</h4>
+                        <div class="flex gap-sm">
+                            <a href="https://instagram.com/vinri_v" target="_blank" rel="noopener" 
+                               class="btn btn-outline" style="padding: 0.75rem 1rem;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/viniciusribeiro" target="_blank" rel="noopener" 
+                               class="btn btn-outline" style="padding: 0.75rem 1rem;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://discord.com/users/vinny_ynis" target="_blank" rel="noopener" 
+                               class="btn btn-outline" style="padding: 0.75rem 1rem;">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="card" style="margin-top: var(--space-lg); padding: var(--space-md);">
+                        <div class="flex items-center gap-sm">
+                            <div style="width: 12px; height: 12px; background: var(--accent-green); border-radius: 50%; 
+                                        box-shadow: 0 0 10px var(--accent-green); animation: pulse 2s infinite;"></div>
+                            <span style="font-weight: 600; color: var(--text-primary);">Disponível para oportunidades</span>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: var(--space-xs);">
+                            Atualmente aberto a: Estágios, Freelances, Projetos Colaborativos
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formulário de contato -->
+                <div class="contact-form animate fade-left">
+                    <h3 style="margin-bottom: var(--space-md);">Envie uma Mensagem</h3>
+
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome Completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-ripple" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+
+                    <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: var(--space-sm);">
+                        <i class="fas fa-lock"></i> Suas informações estão seguras. Não compartilho dados com terceiros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO FAQ - Perguntas frequentes
+         ============================================ -->
+    <section class="section" id="faq" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Perguntas <span class="text-gradient">Frequentes</span></h2>
+                <p>Respostas para as dúvidas mais comuns.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card animate fade-up" style="margin-bottom: var(--space-md);">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                        <i class="fas fa-question-circle"></i> Você está disponível para freelas?
+                    </h4>
+                    <p style="font-size: 0.95rem;">
+                        Sim! Estou aberto a projetos freelance de desenvolvimento web, 
+                        automação de testes e consultoria técnica. Entre em contato para discutirmos.
+                    </p>
+                </div>
+
+                <div class="card animate fade-up" style="margin-bottom: var(--space-md);">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                        <i class="fas fa-question-circle"></i> Quais são suas áreas de especialidade?
+                    </h4>
+                    <p style="font-size: 0.95rem;">
+                        Desenvolvimento web front-end, Java com POO, QA e testes de software, 
+                        e fundamentos de cybersecurity/pentest. Sempre expandindo meus conhecimentos!
+                    </p>
+                </div>
+
+                <div class="card animate fade-up" style="margin-bottom: var(--space-md);">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                        <i class="fas fa-question-circle"></i> Você aceita propostas de estágio?
+                    </h4>
+                    <p style="font-size: 0.95rem;">
+                        Definitivamente! Estou em busca de oportunidades de estágio para 
+                        aplicar meus conhecimentos em um ambiente profissional e continuar evoluindo.
+                    </p>
+                </div>
+
+                <div class="card animate fade-up">
+                    <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                        <i class="fas fa-question-circle"></i> Como funciona o formulário de contato?
+                    </h4>
+                    <p style="font-size: 0.95rem;">
+                        O formulário está preparado para integração com serviços como Formspree, 
+                        EmailJS ou backend próprio. Atualmente, substitua o action do form pela URL 
+                        do seu serviço de envio de emails.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    &lt;<span>VR</span>/&gt;
+                </div>
+                <p style="color: var(--text-secondary);">
+                    Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-pink);"></i> e muito café
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:viniciusgg502@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2024 Vinicius Ribeiro de Mattos. Todos os direitos reservados.
+                </p>
+                <p class="footer-quote">
+                    "while(!(succeed = try()));"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

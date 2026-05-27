@@ -1,0 +1,567 @@
+/* ============================================
+   PORTFÓLIO VINICIUS RIBEIRO - ANIMATIONS.CSS
+   ============================================
+   Todas as animações e keyframes do portfólio.
+   Organizadas por categoria para fácil manutenção.
+   ============================================ */
+
+/* --------------------------------------------
+   1. KEYFRAMES GLOBAIS
+   -------------------------------------------- */
+
+/* Pulsação suave */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+}
+
+/* Rotação contínua */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Flutuação de orbs */
+@keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Cursor piscando */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Pontos de loading */
+@keyframes loadingDots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* Fade in up (entrada suave de baixo) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Glitch effect para textos */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+/* Neon pulse para bordas */
+@keyframes neonPulse {
+    0%, 100% { box-shadow: 0 0 5px var(--accent-cyan), 0 0 10px var(--accent-cyan); }
+    50% { box-shadow: 0 0 20px var(--accent-cyan), 0 0 30px var(--accent-cyan); }
+}
+
+/* Float animation para cards */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Shimmer effect para cards */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Bounce */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --------------------------------------------
+   2. CLASSES DE ANIMAÇÃO COM INTERSECTION OBSERVER
+   -------------------------------------------- */
+
+/* Base para elementos animados */
+.animate {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+/* Animações de entrada */
+.animate.fade-up {
+    transform: translateY(40px);
+}
+
+.animate.fade-down {
+    transform: translateY(-40px);
+}
+
+.animate.fade-left {
+    transform: translateX(-40px);
+}
+
+.animate.fade-right {
+    transform: translateX(40px);
+}
+
+.animate.scale-in {
+    transform: scale(0.9);
+}
+
+.animate.rotate-in {
+    transform: rotate(-10deg) scale(0.9);
+}
+
+/* Estado ativo (quando entra na viewport) */
+.animate.active {
+    opacity: 1;
+    transform: translate(0) scale(1) rotate(0);
+}
+
+/* Delays escalonados para elementos em grupo */
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+.animate-delay-6 { transition-delay: 0.6s; }
+
+/* --------------------------------------------
+   3. ANIMAÇÕES DE HOVER
+   -------------------------------------------- */
+
+/* Glow hover effect */
+.hover-glow {
+    transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+/* Scale hover */
+.hover-scale {
+    transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Lift hover */
+.hover-lift {
+    transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Border glow hover */
+.hover-border-glow {
+    transition: border-color var(--transition-normal);
+}
+
+.hover-border-glow:hover {
+    border-color: var(--accent-cyan);
+}
+
+/* --------------------------------------------
+   4. ANIMAÇÕES ESPECÍFICAS DE SEÇÕES
+   -------------------------------------------- */
+
+/* Hero text animation */
+.hero-text h1 {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-text h2 {
+    animation: fadeInDown 0.8s ease-out 0.1s both;
+}
+
+.hero-text .typing-text {
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.hero-text .hero-description {
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+.hero-image {
+    animation: scaleIn 1s ease-out 0.5s both;
+}
+
+/* Navbar animation */
+.navbar {
+    animation: fadeInDown 0.5s ease-out both;
+}
+
+/* Section header animation */
+.section-header {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Tech cards staggered animation */
+.tech-card:nth-child(1) { transition-delay: 0.05s; }
+.tech-card:nth-child(2) { transition-delay: 0.1s; }
+.tech-card:nth-child(3) { transition-delay: 0.15s; }
+.tech-card:nth-child(4) { transition-delay: 0.2s; }
+.tech-card:nth-child(5) { transition-delay: 0.25s; }
+.tech-card:nth-child(6) { transition-delay: 0.3s; }
+.tech-card:nth-child(7) { transition-delay: 0.35s; }
+.tech-card:nth-child(8) { transition-delay: 0.4s; }
+.tech-card:nth-child(9) { transition-delay: 0.45s; }
+
+/* Project cards staggered */
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(4) { transition-delay: 0.4s; }
+.project-card:nth-child(5) { transition-delay: 0.5s; }
+
+/* Stats cards staggered */
+.stat-card:nth-child(1) { transition-delay: 0.1s; }
+.stat-card:nth-child(2) { transition-delay: 0.2s; }
+.stat-card:nth-child(3) { transition-delay: 0.3s; }
+.stat-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Timeline items staggered */
+.timeline-item:nth-child(1) { transition-delay: 0.1s; }
+.timeline-item:nth-child(2) { transition-delay: 0.2s; }
+.timeline-item:nth-child(3) { transition-delay: 0.3s; }
+
+/* Skill bars staggered */
+.skill-item:nth-child(1) { transition-delay: 0.1s; }
+.skill-item:nth-child(2) { transition-delay: 0.2s; }
+.skill-item:nth-child(3) { transition-delay: 0.3s; }
+.skill-item:nth-child(4) { transition-delay: 0.4s; }
+.skill-item:nth-child(5) { transition-delay: 0.5s; }
+.skill-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* --------------------------------------------
+   5. ANIMAÇÕES CONTÍNUAS
+   -------------------------------------------- */
+
+/* Floating animation para elementos decorativos */
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Slow spin para elementos decorativos */
+.slow-spin {
+    animation: spin 30s linear infinite;
+}
+
+/* Reverse spin */
+.reverse-spin {
+    animation: spin 25s linear infinite reverse;
+}
+
+/* Pulse glow para destaques */
+.pulse-glow {
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* Shimmer para cards de loading/skeleton */
+.shimmer {
+    background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-secondary) 50%, var(--bg-card) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* --------------------------------------------
+   6. ANIMAÇÕES DE MENU MOBILE
+   -------------------------------------------- */
+
+/* Hamburger animation */
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.hamburger-line::before,
+.hamburger-line::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.hamburger-line::before {
+    top: -8px;
+}
+
+.hamburger-line::after {
+    top: 8px;
+}
+
+/* Menu aberto */
+.mobile-menu-btn.active .hamburger-line {
+    background: transparent;
+}
+
+.mobile-menu-btn.active .hamburger-line::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger-line::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile nav slide */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    padding: 6rem 2rem 2rem;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent-cyan);
+}
+
+/* Overlay do menu mobile */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --------------------------------------------
+   7. ANIMAÇÕES DE FORMULÁRIO
+   -------------------------------------------- */
+
+/* Input focus glow */
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: inputGlow 0.3s ease forwards;
+}
+
+@keyframes inputGlow {
+    from { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+    to { box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1); }
+}
+
+/* Button ripple effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* --------------------------------------------
+   8. ANIMAÇÕES DE SCROLL
+   -------------------------------------------- */
+
+/* Smooth scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator i {
+    font-size: 1.25rem;
+    color: var(--accent-cyan);
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 1001;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* --------------------------------------------
+   9. ANIMAÇÕES DE TEMA
+   -------------------------------------------- */
+
+/* Transição suave ao trocar tema */
+body.theme-transitioning {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.theme-transitioning * {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease !important;
+}
+
+/* --------------------------------------------
+   10. ANIMAÇÕES DE ESTATÍSTICAS
+   -------------------------------------------- */
+
+/* Contador animado */
+.stat-number {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.1);
+}
+
+/* --------------------------------------------
+   11. ANIMAÇÕES DE PROJETOS
+   -------------------------------------------- */
+
+/* Overlay de projeto no hover */
+.project-card .project-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover .project-hover-overlay {
+    opacity: 1;
+}
+
+/* Tag hover em projetos */
+.project-tags .tag {
+    transition: all 0.2s ease;
+}
+
+.project-tags .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

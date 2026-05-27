@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <!-- ============================================
+         PORTFÓLIO VINICIUS RIBEIRO - INDEX.HTML
+         ============================================
+         Página inicial do portfólio. Contém Hero,
+         Sobre, Tecnologias, Estatísticas e Footer.
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Vinicius Ribeiro | Computer Science Student & Developer</title>
+    <meta name="description" content="Portfólio de Vinicius Ribeiro - Estudante de Ciência da Computação, Desenvolvedor Web, QA e entusiasta de Cybersecurity/Pentest.">
+    <meta name="keywords" content="Vinicius Ribeiro, Ciência da Computação, Desenvolvimento Web, Java, QA, Cybersecurity, Pentest, Portfolio">
+    <meta name="author" content="Vinicius Ribeiro de Mattos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viniciusribeiro.dev">
+    <meta property="og:title" content="Vinicius Ribeiro | Computer Science Student & Developer">
+    <meta property="og:description" content="Portfólio profissional de Vinicius Ribeiro - Desenvolvimento Web, Java, QA e Cybersecurity.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vinicius Ribeiro | Developer Portfolio">
+    <meta name="twitter:description" content="Portfólio profissional de Vinicius Ribeiro">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ============================================
+         LOADER - Tela de carregamento inicial
+         ============================================ -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Inicializando sistema</div>
+    </div>
+
+    <!-- ============================================
+         CURSOR PERSONALIZADO
+         ============================================ -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- ============================================
+         SCROLL PROGRESS BAR
+         ============================================ -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- ============================================
+         CANVAS DE PARTÍCULAS (Fundo animado)
+         ============================================ -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ============================================
+         NAVBAR - Navegação fixa com glassmorphism
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span>&lt;VR/&gt;</span>
+            </a>
+
+            <!-- Links de navegação (Desktop) -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+
+            <!-- Controles -->
+            <div class="flex items-center gap-sm">
+                <!-- Toggle de tema -->
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <!-- Menu mobile -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile (Overlay) -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre</a>
+        <a href="projects.html">Projetos</a>
+        <a href="contact.html">Contato</a>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Seção principal
+         ============================================ -->
+    <section class="hero" id="home">
+        <!-- Orbs de fundo decorativos -->
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <!-- Texto do Hero -->
+                <div class="hero-text">
+                    <h2>Olá, eu sou</h2>
+                    <h1 class="text-gradient">Vinicius Ribeiro</h1>
+
+                    <!-- Efeito typing -->
+                    <div class="typing-text">
+                        <span id="typing-text"></span>
+                        <span class="cursor"></span>
+                    </div>
+
+                    <p class="hero-description">
+                        Estudante de Ciência da Computação apaixonado por tecnologia, 
+                        desenvolvimento de software e segurança da informação. 
+                        Transformando ideias em código e desafios em soluções.
+                    </p>
+
+                    <!-- Botões de ação -->
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary btn-ripple">
+                            <i class="fas fa-rocket"></i>
+                            Ver Projetos
+                        </a>
+                        <a href="assets/cv.pdf" class="btn btn-secondary btn-ripple" download>
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                        <a href="https://www.linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener" class="btn btn-outline">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener" class="btn btn-outline">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem/Avatar do Hero -->
+                <div class="hero-image">
+                    <div class="avatar-container" data-tilt>
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-ring-2"></div>
+                        <img src="assets/img/avatar_vini.png" 
+                             alt="Vinicius Ribeiro - Avatar Profissional"
+                             loading="eager">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO SOBRE - Resumo profissional
+         ============================================ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Sobre <span class="text-gradient">Mim</span></h2>
+                <p>Conheça minha trajetória acadêmica e profissional na área de tecnologia.</p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Imagem/Ilustração -->
+                <div class="about-image animate fade-right">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=600&fit=crop" 
+                         alt="Workspace de desenvolvimento"
+                         loading="lazy">
+                </div>
+
+                <!-- Conteúdo textual -->
+                <div class="about-content animate fade-left">
+                    <h3>Quem sou eu?</h3>
+                    <p>
+                        Sou <strong>Vinicius Ribeiro de Mattos</strong>, estudante de Ciência da Computação 
+                        com foco em desenvolvimento de software, qualidade de código e segurança da informação. 
+                        Minha jornada na tecnologia começou com a curiosidade de entender como as coisas funcionam 
+                        por trás das telas, e evoluiu para uma paixão por criar soluções robustas e seguras.
+                    </p>
+                    <p>
+                        Atualmente, desenvolvo projetos que vão desde aplicações web modernas até sistemas 
+                        em Java, sempre aplicando boas práticas de QA e explorando o mundo do pentesting 
+                        para entender a segurança por completo.
+                    </p>
+
+                    <!-- Timeline acadêmica resumida -->
+                    <div class="timeline">
+                        <div class="timeline-item animate fade-up">
+                            <div class="timeline-date">2026 - Atual</div>
+                            <h4>Graduando em Ciência da Computação</h4>
+                            <p>Universidade Paulista (UNIP) - Foco em desenvolvimento de software e segurança.</p>
+                        </div>
+                        <div class="timeline-item animate fade-up">
+                            <div class="timeline-date">2025</div>
+                            <h4>Certificações e Cursos Técnicos</h4>
+                            <p>Formação em QA, Pentest básico e desenvolvimento web fullstack.</p>
+                        </div>
+                    </div>
+
+                    <!-- Skills com barras animadas -->
+                    <div class="skills-container">
+                        <h3 class="mb-md">Habilidades Técnicas</h3>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">Java & POO</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">Desenvolvimento Web (HTML/CSS/JS)</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">Banco de Dados (MySQL/SQL)</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">QA & Testes</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">Cybersecurity & Pentest</span>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="45%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item animate fade-up">
+                            <div class="skill-header">
+                                <span class="skill-name">Git & Versionamento</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO TECNOLOGIAS - Stack técnico
+         ============================================ -->
+    <section class="section" id="tech" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Minhas <span class="text-gradient">Tecnologias</span></h2>
+                <p>Ferramentas e linguagens que utilizo no dia a dia.</p>
+            </div>
+
+            <div class="tech-grid">
+                <!-- Java -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <!-- HTML5 -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+
+                <!-- CSS3 -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+
+                <!-- MySQL -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                </div>
+
+                <!-- Git -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+
+                <!-- Python -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+
+                <!-- Nmap / Redes -->
+                <div class="tech-card animate scale-in" data-3d-card>
+                    <i class="fas fa-network-wired"></i>
+                    <span>Nmap</span>
+                </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO ESTATÍSTICAS - Números animados
+         ============================================ -->
+    <section class="section" id="stats">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Minhas <span class="text-gradient">Conquistas</span></h2>
+                <p>Números que representam minha dedicação e evolução.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card animate scale-in">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Projetos Concluídos</div>
+                </div>
+
+                <div class="stat-card animate scale-in">
+                    <div class="stat-number" data-target="9">0</div>
+                    <div class="stat-label">Tecnologias Aprendidas</div>
+                </div>
+
+                <div class="stat-card animate scale-in">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Semestres Cursados</div>
+                </div>
+
+                <div class="stat-card animate scale-in">
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Horas de Estudo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO PROJETOS DESTAQUE - Preview
+         ============================================ -->
+    <section class="section" id="projects-preview" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Projetos em <span class="text-gradient">Destaque</span></h2>
+                <p>Alguns dos projetos mais relevantes do meu portfólio.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Projeto 1: Tower Defense -->
+                <div class="project-card animate fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop" 
+                             alt="Tower Defense Java"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tower Defense Java</h3>
+                        <p>Jogo de estratégia em Java com mecânicas de defesa, inimigos e upgrade de torres.</p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">Java</span>
+                            <span class="tag tag-purple">OOP</span>
+                            <span class="tag tag-green">JavaFX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html#tower-defense">
+                                <i class="fas fa-eye"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/viniciusribeirom/Tower-Defencer-Sustentavel" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: EcoMentorHub -->
+                <div class="project-card animate fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" 
+                             alt="EcoMentorHub"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>EcoMentorHub</h3>
+                        <p>Plataforma de mentoria sustentável conectando estudantes e mentores.</p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">HTML/CSS/JS</span>
+                            <span class="tag tag-purple">MySQL</span>
+                            <span class="tag tag-green">Sustentabilidade</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html#ecomentor">
+                                <i class="fas fa-eye"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/viniciusribeirom/vinri_v" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Simulador Lei de Ohm -->
+                <div class="project-card animate fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" 
+                             alt="Simulador Lei de Ohm"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Simulador Lei de Ohm</h3>
+                        <p>Aplicação interativa para simulação de circuitos elétricos e cálculos.</p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">JavaScript</span>
+                            <span class="tag tag-purple">Canvas</span>
+                            <span class="tag tag-green">Física</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html#ohm">
+                                <i class="fas fa-eye"></i> Ver Projeto
+                            </a>
+                            <a href="https://github.com/viniciusribeirom/Simulador-da-Lei-de-Ohm" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA para ver todos -->
+            <div class="text-center mt-lg animate fade-up">
+                <a href="projects.html" class="btn btn-primary btn-ripple">
+                    <i class="fas fa-folder-open"></i>
+                    Ver Todos os Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER - Rodapé profissional
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    &lt;<span>VR</span>/&gt;
+                </div>
+
+                <p style="color: var(--text-secondary);">
+                    Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-pink);"></i> e muito café
+                </p>
+
+                <div class="footer-social">
+                    <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:viniciusgg502@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://instagram.com/vinri_v" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copy">
+                    &copy; 2024 Vinicius Ribeiro de Mattos. Todos os direitos reservados.
+                </p>
+
+                <p class="footer-quote">
+                    "while(!(succeed = try()));"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         SCRIPTS - Carregamento dos JS
+         ============================================ -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

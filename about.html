@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <!-- ============================================
+         PORTFÓLIO VINICIUS RIBEIRO - ABOUT.HTML
+         ============================================
+         Página "Sobre Mim" com timeline completa,
+         skills detalhadas e informações pessoais.
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Sobre Mim | Vinicius Ribeiro - Computer Science Student</title>
+    <meta name="description" content="Conheça a trajetória de Vinicius Ribeiro - Estudante de Ciência da Computação, desenvolvedor e entusiasta de cybersecurity.">
+    <meta name="keywords" content="Vinicius Ribeiro, Sobre, Ciência da Computação, UNIP, Desenvolvedor, QA, Pentest">
+    <meta name="author" content="Vinicius Ribeiro de Mattos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viniciusribeiro.dev/about.html">
+    <meta property="og:title" content="Sobre Mim | Vinicius Ribeiro">
+    <meta property="og:description" content="Trajetória acadêmica e profissional de Vinicius Ribeiro">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Carregando perfil</div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span>&lt;VR/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">Sobre</a></li>
+                <li><a href="projects.html">Projetos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+
+            <div class="flex items-center gap-sm">
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre</a>
+        <a href="projects.html">Projetos</a>
+        <a href="contact.html">Contato</a>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Sobre
+         ============================================ -->
+    <section class="hero" style="min-height: 60vh; padding-top: 120px;">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1" style="width: 300px; height: 300px; top: -50px; right: -50px;"></div>
+            <div class="gradient-orb orb-2" style="width: 250px; height: 250px; bottom: -30px; left: -30px;"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header animate fade-up" style="text-align: center;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);">Sobre <span class="text-gradient">Mim</span></h2>
+                <p style="max-width: 700px; margin: 0 auto;">
+                    Minha trajetória, formação acadêmica e as tecnologias que impulsionam minha carreira.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO BIOGRAFIA
+         ============================================ -->
+    <section class="section" id="biography">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image animate fade-right">
+                    <img src="assets/img/foto_minha_vini.jpeg" 
+                         alt="Vinicius Ribeiro"
+                         loading="lazy">
+                </div>
+
+                <div class="about-content animate fade-left">
+                    <h3>Vinicius Ribeiro de Mattos</h3>
+                    <p style="font-family: var(--font-mono); color: var(--accent-cyan); margin-bottom: var(--space-md);">
+                        <i class="fas fa-map-marker-alt"></i> São Paulo, Brasil
+                    </p>
+
+                    <p>
+                        Olá! Sou um estudante de <strong>Ciência da Computação</strong> na Universidade Paulista (UNIP), 
+                        atualmente no 4º semestre. Minha paixão pela tecnologia começou cedo, quando descobri que 
+                        poderia criar coisas incríveis apenas com linhas de código.
+                    </p>
+
+                    <p>
+                        Ao longo da minha formação, desenvolvi interesse em diversas áreas: desde o 
+                        <strong>desenvolvimento web moderno</strong> até a <strong>segurança da informação</strong>. 
+                        Acredito que um bom desenvolvedor deve entender não apenas como construir sistemas, 
+                        mas também como protegê-los.
+                    </p>
+
+                    <p>
+                        Atualmente, divido meu tempo entre projetos acadêmicos, estudos autônomos em 
+                        <strong>pentest e cybersecurity</strong>, e desenvolvimento de aplicações práticas 
+                        que resolvem problemas reais. Meu objetivo é me tornar um profissional completo, 
+                        capaz de atuar em todas as camadas do desenvolvimento de software.
+                    </p>
+
+                    <div class="flex gap-sm" style="margin-top: var(--space-md); flex-wrap: wrap;">
+                        <a href="assets/cv.pdf" class="btn btn-primary btn-ripple" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary btn-ripple">
+                            <i class="fas fa-paper-plane"></i> Entre em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO TIMELINE COMPLETA
+         ============================================ -->
+    <section class="section" id="timeline" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Trajetória <span class="text-gradient">Acadêmica</span></h2>
+                <p>Minha jornada de aprendizado e evolução na área de tecnologia.</p>
+            </div>
+
+            <div class="timeline" style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline-item animate fade-up">
+                    <div class="timeline-date">2026 - Atual</div>
+                    <h4>Graduando em Ciência da Computação</h4>
+                    <p><strong>Universidade Paulista (UNIP)</strong></p>
+                    <p>
+                        Cursando o 4º semestre com foco em desenvolvimento de software, 
+                        estruturas de dados, algoritmos e fundamentos de segurança da informação. 
+                        Participação ativa em projetos de extensão e grupos de estudo.
+                    </p>
+                </div>
+
+                <div class="timeline-item animate fade-up">
+                    <div class="timeline-date">2024</div>
+                    <h4>Formação em Quality Assurance (QA)</h4>
+                    <p><strong>Curso Online + Prática</strong></p>
+                    <p>
+                        Especialização em testes de software, automação de testes, 
+                        metodologias ágeis e ferramentas como Selenium e JUnit. 
+                        Foco em garantia de qualidade no ciclo de desenvolvimento.
+                    </p>
+                </div>
+
+                <div class="timeline-item animate fade-up">
+                    <div class="timeline-date">2023</div>
+                    <h4>Introdução ao Pentest & Cybersecurity</h4>
+                    <p><strong>Estudos Autônomos + Cursos</strong></p>
+                    <p>
+                        Iniciação no mundo da segurança ofensiva com estudos em 
+                        Kali Linux, Nmap, Metasploit, vulnerabilidades web e 
+                        fundamentos de ethical hacking. Participação em CTFs e labs práticos.
+                    </p>
+                </div>
+
+                <div class="timeline-item animate fade-up">
+                    <div class="timeline-date">2023 </div>
+                    <h4>Desenvolvimento Web Fullstack</h4>
+                    <p><strong>Projetos Práticos</strong></p>
+                    <p>
+                        Construção de aplicações web completas utilizando HTML5, CSS3, 
+                        JavaScript vanilla, integração com bancos de dados MySQL e 
+                        boas práticas de UI/UX design.
+                    </p>
+                </div>
+
+                <div class="timeline-item animate fade-up">
+                    <div class="timeline-date">2023</div>
+                    <h4>Início da Jornada em Java</h4>
+                    <p><strong>Programação Orientada a Objetos</strong></p>
+                    <p>
+                        Aprendizado dos fundamentos de Java e POO através de projetos 
+                        acadêmicos como jogos, sistemas de gestão e simuladores. 
+                        Domínio de conceitos como herança, polimorfismo e encapsulamento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO SKILLS DETALHADAS
+         ============================================ -->
+    <section class="section" id="skills-detailed">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Habilidades <span class="text-gradient">Técnicas</span></h2>
+                <p>Tecnologias e competências que desenvolvi ao longo da minha formação.</p>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-lg);">
+                <!-- Hard Skills -->
+                <div class="animate fade-right">
+                    <h3 style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-code" style="color: var(--accent-cyan);"></i> 
+                        Hard Skills
+                    </h3>
+
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Java & POO</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML5 / CSS3 / JavaScript</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">MySQL & Banco de Dados</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Linux & Terminal</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">QA & Testes Automatizados</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Cybersecurity & Pentest</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="animate fade-left">
+                    <h3 style="margin-bottom: var(--space-md);">
+                        <i class="fas fa-users" style="color: var(--accent-purple);"></i> 
+                        Soft Skills
+                    </h3>
+
+                    <div class="flex flex-col gap-md">
+                        <div class="card" style="padding: var(--space-md);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-lightbulb"></i> Resolução de Problemas
+                            </h4>
+                            <p style="font-size: 0.95rem;">
+                                Capacidade analítica para decompor problemas complexos em 
+                                soluções simples e eficientes.
+                            </p>
+                        </div>
+
+                        <div class="card" style="padding: var(--space-md);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-comments"></i> Comunicação Técnica
+                            </h4>
+                            <p style="font-size: 0.95rem;">
+                                Habilidade de traduzir conceitos técnicos para diferentes 
+                                públicos de forma clara e objetiva.
+                            </p>
+                        </div>
+
+                        <div class="card" style="padding: var(--space-md);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-sync-alt"></i> Aprendizado Contínuo
+                            </h4>
+                            <p style="font-size: 0.95rem;">
+                                Autodidata por natureza, sempre buscando novas tecnologias 
+                                e metodologias para evoluir.
+                            </p>
+                        </div>
+
+                        <div class="card" style="padding: var(--space-md);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-project-diagram"></i> Trabalho em Equipe
+                            </h4>
+                            <p style="font-size: 0.95rem;">
+                                Experiência em projetos colaborativos usando Git, 
+                                metodologias ágeis e comunicação efetiva.
+                            </p>
+                        </div>
+
+                        <div class="card" style="padding: var(--space-md);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-clock"></i> Gestão de Tempo
+                            </h4>
+                            <p style="font-size: 0.95rem;">
+                                Organização eficiente para conciliar estudos, projetos 
+                                pessoais e desenvolvimento profissional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO CERTIFICAÇÕES
+         ============================================ -->
+    <section class="section" id="certifications" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <h2>Certificações & <span class="text-gradient">Cursos</span></h2>
+                <p>Formações complementares que fortalecem minha base técnica.</p>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+                <div class="card animate fade-up">
+                    <div class="flex items-center gap-sm" style="margin-bottom: var(--space-sm);">
+                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-cyan);"></i>
+                        <div>
+                            <h4>Fundamentos de Cybersecurity</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Cisco Networking Academy - 2024</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Conceitos fundamentais de segurança da informação, ameaças digitais, 
+                        criptografia e boas práticas de proteção de dados.
+                    </p>
+                </div>
+
+                <div class="card animate fade-up">
+                    <div class="flex items-center gap-sm" style="margin-bottom: var(--space-sm);">
+                        <i class="fas fa-bug" style="font-size: 2rem; color: var(--accent-purple);"></i>
+                        <div>
+                            <h4>Quality Assurance Basics</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Udemy - 2024</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Fundamentos de testes de software, tipos de testes, automação básica 
+                        e integração de QA no ciclo de desenvolvimento ágil.
+                    </p>
+                </div>
+
+                <div class="card animate fade-up">
+                    <div class="flex items-center gap-sm" style="margin-bottom: var(--space-sm);">
+                        <i class="fab fa-git-alt" style="font-size: 2rem; color: var(--accent-orange);"></i>
+                        <div>
+                            <h4>Git & GitHub Essentials</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Digital Innovation One - 2023</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Versionamento de código, branching strategies, pull requests, 
+                        resolução de conflitos e colaboração em equipe.
+                    </p>
+                </div>
+
+                <div class="card animate fade-up">
+                    <div class="flex items-center gap-sm" style="margin-bottom: var(--space-sm);">
+                        <i class="fas fa-terminal" style="font-size: 2rem; color: var(--accent-green);"></i>
+                        <div>
+                            <h4>Linux para Desenvolvedores</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Udemy - 2024</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">
+                        Comandos essenciais, shell scripting, gerenciamento de pacotes, 
+                        permissões e administração básica de sistemas Linux.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    &lt;<span>VR</span>/&gt;
+                </div>
+                <p style="color: var(--text-secondary);">
+                    Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-pink);"></i> e muito café
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:viniciusgg502@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2024 Vinicius Ribeiro de Mattos. Todos os direitos reservados.
+                </p>
+                <p class="footer-quote">
+                    "while(!(succeed = try()));"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

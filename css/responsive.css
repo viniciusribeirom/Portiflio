@@ -1,0 +1,474 @@
+/* ============================================
+   PORTFÓLIO VINICIUS RIBEIRO - RESPONSIVE.CSS
+   ============================================
+   Todas as media queries e ajustes responsivos.
+   Mobile-first approach com breakpoints:
+   - 576px  (sm)
+   - 768px  (md)
+   - 992px  (lg)
+   - 1200px (xl)
+   ============================================ */
+
+/* --------------------------------------------
+   1. BREAKPOINT EXTRA LARGE (1200px+)
+   -------------------------------------------- */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .hero-content {
+        gap: var(--space-xl);
+    }
+}
+
+/* --------------------------------------------
+   2. BREAKPOINT LARGE (992px - 1199px)
+   -------------------------------------------- */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .hero-image .avatar-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------
+   3. BREAKPOINT MEDIUM (768px - 991px)
+   -------------------------------------------- */
+@media (max-width: 991px) {
+    :root {
+        --space-xl: 5rem;
+        --space-lg: 3rem;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    /* Navbar mobile */
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 0.5rem;
+    }
+
+    /* Hero */
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+
+    .hero-text .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image .avatar-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Tech */
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-links {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Grids gerais */
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------
+   4. BREAKPOINT SMALL (576px - 767px)
+   -------------------------------------------- */
+@media (max-width: 767px) {
+    :root {
+        --space-xl: 4rem;
+        --space-lg: 2rem;
+        --space-md: 1.5rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 70px;
+        min-height: auto;
+        padding-bottom: var(--space-xl);
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image .avatar-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Tech */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .tech-card {
+        padding: var(--space-sm);
+    }
+
+    .tech-card i {
+        font-size: 2.5rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .stat-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Grids */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline */
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1.5rem;
+        width: 10px;
+        height: 10px;
+        margin-left: -4px;
+    }
+
+    /* Contact form */
+    .contact-form {
+        padding: var(--space-md);
+    }
+
+    /* Footer */
+    .footer-social {
+        gap: var(--space-xs);
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* --------------------------------------------
+   5. BREAKPOINT EXTRA SMALL (< 576px)
+   -------------------------------------------- */
+@media (max-width: 575px) {
+    html {
+        font-size: 13px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text .typing-text {
+        font-size: 1rem;
+    }
+
+    .hero-image .avatar-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Tech */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-card i {
+        font-size: 2rem;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Cards */
+    .card {
+        padding: var(--space-sm);
+    }
+
+    /* Project tags */
+    .project-tags {
+        gap: 0.35rem;
+    }
+
+    .project-tags .tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+        width: 85%;
+        padding: 5rem 1.5rem 1.5rem;
+    }
+
+    /* Loader */
+    .loader-spinner {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Scroll indicator hidden */
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* --------------------------------------------
+   6. ORIENTAÇÃO PAISAGEM EM MOBILE
+   -------------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 var(--space-lg);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .hero-image {
+        order: 0;
+    }
+
+    .hero-image .avatar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* --------------------------------------------
+   7. AJUSTES DE ACESSIBILIDADE
+   -------------------------------------------- */
+
+/* Reduzir motion para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .animate {
+        opacity: 1;
+        transform: none;
+    }
+
+    .custom-cursor,
+    .cursor-dot,
+    #particles-canvas {
+        display: none !important;
+    }
+}
+
+/* --------------------------------------------
+   8. AJUSTES DE IMPRESSÃO
+   -------------------------------------------- */
+@media print {
+    .navbar,
+    .footer,
+    .custom-cursor,
+    .cursor-dot,
+    #particles-canvas,
+    .scroll-indicator,
+    .scroll-progress,
+    .loader,
+    .theme-toggle,
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .section {
+        padding: 2rem 0;
+        page-break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+}
+
+/* --------------------------------------------
+   9. AJUSTES PARA TELAS GRANDES (4K+)
+   -------------------------------------------- */
+@media (min-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-image .avatar-container {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* --------------------------------------------
+   10. AJUSTES PARA TABLET EM PORTRAIT
+   -------------------------------------------- */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+    .hero-content {
+        gap: var(--space-md);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

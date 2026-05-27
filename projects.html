@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <!-- ============================================
+         PORTFÓLIO VINICIUS RIBEIRO - PROJECTS.HTML
+         ============================================ -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Projetos | Vinicius Ribeiro - Portfolio</title>
+    <meta name="description" content="Projetos de Vinicius Ribeiro - Tower Defense Java, EcoMentorHub, Simulador Lei de Ohm, Sistema de Banco de Dados e mais.">
+    <meta name="keywords" content="Projetos, Vinicius Ribeiro, Java, Web Development, Tower Defense, EcoMentorHub, Portfolio">
+    <meta name="author" content="Vinicius Ribeiro de Mattos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://viniciusribeiro.dev/projects.html">
+    <meta property="og:title" content="Projetos | Vinicius Ribeiro">
+    <meta property="og:description" content="Conheça os projetos desenvolvidos por Vinicius Ribeiro">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Carregando projetos</div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span>&lt;VR/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="projects.html" class="active">Projetos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+
+            <div class="flex items-center gap-sm">
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Sobre</a>
+        <a href="projects.html">Projetos</a>
+        <a href="contact.html">Contato</a>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Projetos
+         ============================================ -->
+    <section class="hero" style="min-height: 50vh; padding-top: 120px;">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1" style="width: 350px; height: 350px; top: -100px; right: -100px;"></div>
+            <div class="gradient-orb orb-2" style="width: 280px; height: 280px; bottom: -50px; left: -50px;"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header animate fade-up" style="text-align: center;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);">Meus <span class="text-gradient">Projetos</span></h2>
+                <p style="max-width: 700px; margin: 0 auto;">
+                    Aplicações desenvolvidas com dedicação, aplicando conceitos acadêmicos 
+                    e boas práticas de desenvolvimento de software.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO PROJETOS COMPLETA
+         ============================================ -->
+    <section class="section" id="all-projects">
+        <div class="container">
+            <!-- Filtros de projeto (funcionalidade visual) -->
+            <div class="flex justify-center gap-sm" style="margin-bottom: var(--space-lg); flex-wrap: wrap;">
+                <button class="btn btn-primary btn-ripple active" data-filter="all">
+                    <i class="fas fa-th"></i> Todos
+                </button>
+                <button class="btn btn-outline" data-filter="java">
+                    <i class="fab fa-java"></i> Java
+                </button>
+                <button class="btn btn-outline" data-filter="web">
+                    <i class="fas fa-globe"></i> Web
+                </button>
+                <button class="btn btn-outline" data-filter="database">
+                    <i class="fas fa-database"></i> Database
+                </button>
+                <button class="btn btn-outline" data-filter="security">
+                    <i class="fas fa-shield-alt"></i> Security
+                </button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Projeto 1: Tower Defense Java -->
+                <div class="project-card animate fade-up" id="tower-defense" data-category="java">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop" 
+                             alt="Tower Defense Java"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tower Defense Sustentável</h3>
+                        <p>
+                            Jogo de estratégia em Java com tema sustentável. Defenda o meio ambiente 
+                            construindo torres ecológicas contra ondas de poluição. Sistema de upgrade, 
+                            múltiplos níveis e mecânicas de defesa avançadas.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">Java</span>
+                            <span class="tag tag-purple">POO</span>
+                            <span class="tag tag-green">JavaFX</span>
+                            <span class="tag tag-orange">Sustentabilidade</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeirom/Tower-Defencer-Sustentavel" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Demo em breve!', 'info')">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: EcoMentorHub -->
+                <div class="project-card animate fade-up" id="ecomentor" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" 
+                             alt="EcoMentorHub"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>EcoMentorHub</h3>
+                        <p>
+                            Plataforma web de mentoria sustentável que conecta estudantes com mentores 
+                            experientes. Sistema de agendamento, chat, gamificação e dashboard de progresso.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">HTML5</span>
+                            <span class="tag tag-purple">CSS3</span>
+                            <span class="tag tag-green">JavaScript</span>
+                            <span class="tag tag-orange">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeirom/vinri_v" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Demo em breve!', 'info')">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Simulador Lei de Ohm -->
+                <div class="project-card animate fade-up" id="ohm" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" 
+                             alt="Simulador Lei de Ohm"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Simulador Lei de Ohm</h3>
+                        <p>
+                            Aplicação web interativa para simulação de circuitos elétricos. 
+                            Visualização gráfica em tempo real, cálculos automáticos de tensão, 
+                            corrente e resistência com interface intuitiva.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">JavaScript</span>
+                            <span class="tag tag-purple">Canvas API</span>
+                            <span class="tag tag-green">Física</span>
+                            <span class="tag tag-orange">Educação</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeirom/Simulador-da-Lei-de-Ohm" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Demo em breve!', 'info')">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Sistema de Banco de Dados -->
+                <div class="project-card animate fade-up" id="database" data-category="database">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&h=400&fit=crop" 
+                             alt="Sistema de Banco de Dados"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Gestão de Dados</h3>
+                        <p>
+                            Sistema completo de CRUD com banco de dados MySQL, interface web 
+                            responsiva e relatórios dinâmicos. Modelagem relacional, normalização 
+                            e procedures para otimização de consultas.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">MySQL</span>
+                            <span class="tag tag-purple">SQL</span>
+                            <span class="tag tag-green">PHP</span>
+                            <span class="tag tag-orange">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeiro/sistema-bd" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Demo em breve!', 'info')">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Sistema de Energia Sustentável -->
+                <div class="project-card animate fade-up" id="energy" data-category="java">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop" 
+                             alt="Sistema de Energia Sustentável"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Energia Sustentável</h3>
+                        <p>
+                            Aplicação Java para monitoramento e otimização de consumo de energia 
+                            renovável. Dashboard com gráficos, alertas de eficiência e 
+                            recomendações inteligentes de economia.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">Java</span>
+                            <span class="tag tag-purple">Swing</span>
+                            <span class="tag tag-green">Sustentabilidade</span>
+                            <span class="tag tag-orange">IoT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeiro/energy-system" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Demo em breve!', 'info')">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 6: Port Scanner -->
+                <div class="project-card animate fade-up" id="portscanner" data-category="security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" 
+                             alt="Port Scanner"
+                             loading="lazy">
+                        <div class="project-overlay"></div>
+                        <div class="project-hover-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Port Scanner & Network Tool</h3>
+                        <p>
+                            Ferramenta de análise de rede desenvolvida em Python para escanear 
+                            portas, identificar serviços e mapear topologia de rede. Interface 
+                            CLI intuitiva com relatórios detalhados.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-cyan">Python</span>
+                            <span class="tag tag-purple">Sockets</span>
+                            <span class="tag tag-green">Nmap</span>
+                            <span class="tag tag-orange">Cybersecurity</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/viniciusribeiro/port-scanner" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                            <a href="#" onclick="new ToastNotification('Ferramenta educacional - use com responsabilidade', 'warning')">
+                                <i class="fas fa-info-circle"></i> Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO CTA - Contato
+         ============================================ -->
+    <section class="section" style="background: var(--bg-secondary); text-align: center;">
+        <div class="container">
+            <div class="animate fade-up">
+                <h2 style="margin-bottom: var(--space-sm);">
+                    Tem um projeto em <span class="text-gradient">mente</span>?
+                </h2>
+                <p style="max-width: 600px; margin: 0 auto var(--space-md);">
+                    Estou sempre aberto a novas oportunidades e colaborações. 
+                    Vamos conversar sobre como posso contribuir!
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-ripple" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                    <i class="fas fa-paper-plane"></i> Iniciar Conversa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    &lt;<span>VR</span>/&gt;
+                </div>
+                <p style="color: var(--text-secondary);">
+                    Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-pink);"></i> e muito café
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/viniciusribeirom" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vinicius-ribeiro-245945269/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:viniciusgg502@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2024 Vinicius Ribeiro de Mattos. Todos os direitos reservados.
+                </p>
+                <p class="footer-quote">
+                    "while(!(succeed = try()));"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Filtro de projetos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Atualiza botões ativos
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('btn-primary');
+                        btn.classList.add('btn-outline');
+                    });
+                    button.classList.remove('btn-outline');
+                    button.classList.add('btn-primary');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    // Filtra cards
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
